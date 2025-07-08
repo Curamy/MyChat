@@ -2,6 +2,9 @@
 
 AI 캐릭터와 대화할 수 있는 React 기반 채팅 애플리케이션입니다.
 
+![image](https://github.com/user-attachments/assets/768471b9-5bc9-480b-a40d-4cefe11a1f85)
+
+
 ## 기능
 
 - 구글 로그인/로그아웃

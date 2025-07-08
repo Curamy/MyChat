@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# MyChat - AI 채팅 시뮬레이션 게임
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AI 캐릭터와 대화할 수 있는 React 기반 채팅 애플리케이션입니다.
 
-## Available Scripts
+## 기능
 
-In the project directory, you can run:
+- 구글 로그인/로그아웃
+- 캐릭터 생성, 수정, 삭제
+- AI 캐릭터와의 실시간 대화
+- 대화 내역 저장 및 불러오기
+- Firebase Firestore를 통한 데이터 저장
 
-### `npm start`
+## 설치 및 실행
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. 의존성 설치
+```bash
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. 환경변수 설정
+프로젝트 루트에 `.env` 파일을 생성하고 다음 내용을 추가하세요:
 
-### `npm test`
+```env
+# Firebase 설정
+REACT_APP_FIREBASE_API_KEY=your_firebase_api_key_here
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Gemini API 설정
+REACT_APP_GEMINI_API_KEY=your_gemini_api_key_here
+REACT_APP_GEMINI_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+```
 
-### `npm run build`
+### 3. Firebase 설정
+1. [Firebase Console](https://console.firebase.google.com/)에서 새 프로젝트 생성
+2. Authentication에서 Google 로그인 활성화
+3. Firestore Database 생성
+4. 프로젝트 설정에서 웹 앱 추가하여 설정값 복사
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. Gemini API 설정
+1. [Google AI Studio](https://makersuite.google.com/app/apikey)에서 API 키 생성
+2. `.env` 파일에 API 키 추가
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 5. 애플리케이션 실행
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 주의사항
 
-### `npm run eject`
+- `.env` 파일은 절대 GitHub에 업로드하지 마세요
+- API 키는 안전하게 보관하고 공개하지 마세요
+- 프로덕션 배포 시 환경변수를 적절히 설정하세요
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 기술 스택
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- Firebase (Authentication, Firestore)
+- Google Gemini AI API
+- CSS (인라인 스타일)
